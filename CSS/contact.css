@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #282932;
+    width:100%;
+    min-height: 82vh;
+}
+
+#content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+   background-color: #FAEBD7;
+   padding: 0px 30px 30px 30px;
+}
+
+h4 {
+    font-size: 30px;
+    color: #f7b613;
+    font-family: cursive;
+}
+
+#content p,pre {
+    font-family: cursive;
+    color: ;
+    border-bottom: #282932;
+}
