@@ -7,7 +7,7 @@
          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <title>Pizza Studio</title>
     </head>
-    <body>
+    <body class="bg-slate-100">
         <header class="site-header sticky top-0 z-50">
             <div id="container1">
                 <div id="logo">
@@ -25,7 +25,9 @@
                         </ul>
                     </div>
                     <div id="mainlinks">
-                        <img src="Images/sign-in.png" alt="Sign-in">
+                        <a href="login.html">
+                            <img src="Images/sign-in.png" alt="Sign-in">
+                        </a>
                         <a href="cart.html">
                             <img src="Images/cart.png" alt="Cart">
                         </a>
@@ -35,3 +37,40 @@
                         </span>
                     </div> 
                 <!-- </nav> -->
+             </div>
+        </header>
+        <main class="site-main">
+            <div class="flex flex-row flex-wrap gap-10 mt-10 items-center justify-center">
+                <div class="bg-white rounded-lg shadow-md self-start p-4 mb-10 w-100 h-auto min-h-50 max-w-6xl">
+                    <h2 class="text-md font-semibold mb-4 text-center text-[#f7b613]">Cart Summary</h2>
+                    <div id="cartItems" class="mb-4">
+                        <p class="text-center text-sm"> Your cart is empty!</p>
+                        <!-- Cart items will be dynamically added here -->
+                    </div>
+                    <button id="clearCartBtn" onclick="clearCart()" class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
+                        Clear Cart
+                    </button>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-4 mb-10 w-100 h-auto self-start max-w-6xl">
+                        <p class="text-md font-semibold mb-4 text-[#f7b613]">Order Summary</p>
+                        <p class="text-sm mb-4">Subtotal: <span id="subtotal"class="ml-56"> $0.00</span></p>
+                        <p  class="text-sm mb-4">Delivery Fee: <span id="deliveryFee"class="ml-50"> $0.00</span></p>
+                         <p class="text-sm mb-4">Taxes: <span id="taxes" class="ml-61"> $0.00</span></p>
+                        <hr class="border-t-2 border-[#f7b613] my-2 w-full">
+                        <p class="text-sm mb-5 font-semibold text-[#f7b613]">Total: <span id="cartTotal" class="ml-62"> $0.00</span></p>
+                        <button onclick="checkout()"
+                            class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
+                            Proceed to Checkout
+                        </button>
+                </div>
+        </main>
+         <footer class="site-footer">
+            <div>
+                <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="JS/menuItemsInitialize.js"></script>
+        <script src="JS/cart.js"></script>
+        <script src="JS/renderCart.js"></script>
+    </body>
+</html>

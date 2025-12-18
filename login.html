@@ -5,13 +5,12 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/aboutus.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Pizza Studio</title>
 </head>
 
 <body>
-    <header class="site-header">
+    <header class="site-header sticky top-0 z-50">
         <div id="container1">
             <div id="logo">
                 <a href="index.html">
@@ -36,31 +35,29 @@
                 </a>
                 <span id="cartBadge"
                     class="relative -top-4 right-7 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
-                    0 </span>
+                    0
+                </span>
             </div>
             <!-- </nav> -->
         </div>
     </header>
-    <main class="site-main">
-        <div id="container">
-            <div id="sub-container2">
-                <img src="Images/aboutus.jpeg" alt="Pizza Studio">
-            </div>
-            <div id="sub-container1">
-                <h5>About Us</h5>
-                <center>
-                    <p>Founded in Oregon, Ohio, just outside of Toledo,
-                        we've been a Slice of the CommunityTM since 1978.
-                        We got here by doing things the right way,
-                        because when you love pizza this much,
-                        that's the only way to do things.
-                        Our dedication to quality has made us one of the
-                        fastest-growing pizza brands in America, providing plenty of
-                        delicious moments and opportunities along the way.</p>
-                </center>
-            </div>
-        </div>
+    <main class="flex items-center justify-center min-h-[80vh] bg-gray-100">
+        <form id="loginForm" class="bg-white border rounded-xl shadow-lg p-6 w-full max-w-md shadow">
+            <h2 class="text-xl text-center font-semibold mb-4">Login</h2>
+
+            <input type="email" id="email" required placeholder="Email" class="w-full border rounded-lg px-4 py-2 mb-3">
+
+            <input type="password" id="password" required placeholder="Password"
+                class="w-full border rounded-lg px-4 py-2 mb-4">
+            <p class="text-sm mb-4">Don't have an account?
+                <a href="signup.html" class="text-blue-800 hover:underline">Sign Up</a>
+            </p>
+            <button onclick="loginUser()" class="w-full bg-[#f7b613] hover:bg-[#805c03] py-2 rounded-lg">
+                Login
+            </button>
+        </form>
     </main>
+
     <footer class="site-footer">
         <div>
             <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
