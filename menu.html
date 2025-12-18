@@ -4,11 +4,12 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="CSS/index.css">
-        <link rel="stylesheet" href="CSS/menu.css">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!--<link rel="stylesheet" href="CSS/menu.css">-->
         <title>Pizza Studio</title>
     </head>
     <body>
-        <header class="site-header">
+        <header class="site-header sticky top-0 z-50">
             <div id="container1">
                 <div id="logo">
                      <a href="index.html">
@@ -26,40 +27,54 @@
                     </div>
                     <div id="mainlinks">
                         <img src="Images/sign-in.png" alt="Sign-in">
-                        <img src="Images/cart.png" alt="Cart">
+                        <a href="cart.html">
+                            <img src="Images/cart.png" alt="Cart">
+                        </a>
+                        <span id="cartBadge"
+                            class="relative -top-4 right-7 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
+                            0 </span>
                     </div> 
                 <!-- </nav> -->
             </div>
         </header>
-         <main class="site-main">
-            <h2>Pizza</h2>
-            <div class="container">
-                <div class="menuitem">
-                    <img src="Images/BackyardBBQ.jpg" alt="Backyard BBQ Chicken">
-                    <h4 class="itemname">Backyard BBQ chicken</h4>
-                    <p class="description">Bbq chicken, corn, cilantro, chipotle sauce</p>
-                    <b class="price">$15.99</b>
-                    <button class="addbutton" onclick="location.href='cart.html'">
-                            Add
-                    </button>
-                </div>
-                <div class="menuitem">
-                    <img src="Images/Margherita.jpg" alt="Margherita Pizza">
-                    <h4 class="itemname">Margherita  pizza</h4>
-                    <p class="description">meatball marinara, spinach, sausage</p>
-                    <b class="price">$15.99</b>
-                    <button class="addbutton" onclick="location.href='cart.html'">
-                            Add
-                    </button>
-                </div>
-                <div class="menuitem">
-                    <img src="Images/ChickenAlfredo.jpg" alt="Chicken ALfredo">
-                    <h4 class="itemname">Chicken Alfredo Pizza</h4>
-                    <p class="description">Grilled chicken, sausage, onions, cilantro, Alfredo sauce</p>
-                    <b class="price">$15.99</b>
-                    <button class="addbutton" onclick="location.href='cart.html'">
-                            Add
-                    </button>
+         <main>
+            <div class="flex flex-col gap-10">
+                <section class=" bg-white mt-4 p-8 max-w-6xl mx-auto">
+                    <h2 class="text-2xl mb-2 font-semibold">PIZZA</h2>
+                    <div class="flex items-center justify-between mb-5">
+                        <div id="pizza-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                         </div>
+                    </div>
+                </section>
+                 <section class=" bg-white mt-4 p-8 max-w-6xl mx-auto">
+                    <h2 class="text-2xl mb-2 font-semibold">PASTA</h2>
+                    <div class="flex items-center justify-between mb-5">
+                        <div id="pasta-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        </div>
+                    </div>
+                </section>
+                <section class=" bg-white mt-4 p-8 max-w-6xl mx-auto">
+                    <h2 class="text-2xl mb-2 font-semibold">SALADS</h2>
+                    <div class="flex items-center justify-between mb-5">
+                        <div id="salads-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    </div>
+                </section>
+                 <section class=" bg-white mt-4 p-8 max-w-6xl mx-auto">
+                    <h2 class="text-2xl mb-2 font-semibold">DESSERTS</h2>
+                    <div class="flex items-center justify-between mb-5">
+                        <div id="desserts-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        </div>
+                    </div>
+                 </section>
+                <div id="boxContainer" class="hidden fixed inset-0 bg-black-200/40 flex items-center justify-center">
+                    <div class="bg-white p-6 text-center rounded shadow-lg w-100 h-50">
+                        <img id="cartAddedImg" class="block mx-auto mb-4 w-16 h-16">
+                        <p id="boxMessage" class="inline -pt-4 text-sm"></p>
+                        <div class="mt-5">
+                            <button class="font-semibold mr-2 bg-[#f7b613] w-20 h-7 rounded mb-2" onclick=location.href="cart.html">Go to Cart</button>
+                            <button class="font-semibold mr-2 bg-[#f7b613] w-14 h-7 rounded mb-2" onclick="closeBox()">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
          </main>
@@ -69,5 +84,9 @@
                 <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
             </div>
         </footer>
+
+         <!-- SCRIPTS -->
+        <script src="JS/menuitem.js"></script>
+        <script src="JS/cart.js"></script>
     </body>
 </html>
