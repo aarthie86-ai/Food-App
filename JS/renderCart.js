@@ -51,21 +51,24 @@ function renderCart() {
     return;
   }
 
-  cartItems.innerHTML = entries.map(([id, qty]) => {
-    const menuItem = MENU_ITEMS.find(x => x.id == id);
-    console.log(menuItem);
-    return `
-      <div class="p-4">
-        <div class="flex justify-between border-b pb-2 border-gray-300">
-          <div>
-            <p class="font-normal">${menuItem.name}</p>
-            <p class="text-xs text-gray-500">$${menuItem.price} × ${qty}</p>
+  if(cartItems) {
+    cartItems.innerHTML = entries.map(([id, qty]) => {
+      const menuItem = MENU_ITEMS.find(x => x.id == id);
+      console.log(menuItem);
+      return `
+        <div class="p-4">
+          <div class="flex justify-between border-b pb-2 border-gray-300">
+            <div>
+              <p class="font-normal">${menuItem.name}</p>
+              <p class="text-xs text-gray-500">$${menuItem.price} × ${qty}</p>
+            </div>
+            <p class="font-normal">$${menuItem.price * qty}</p>
           </div>
-          <p class="font-normal">$${menuItem.price * qty}</p>
         </div>
-      </div>
-    `;
-  }).join("");
+      `;
+    }).join("");
+  }
+  
 
   subtotal.textContent = `$${getCartSubTotal()}`;
   deliveryFee.textContent = `$${delFee.toFixed(2)}`;
@@ -74,11 +77,14 @@ function renderCart() {
   cartTotal.textContent = `$${totalAmount}`;
 }
 
-document.getElementById("clearCartBtn").onclick = () => {
-    localStorage.removeItem("my_cart");
-    renderCart();
-    updateCartBadge();
-};
+if(document.getElementById("clearCartBtn")){
+  document.getElementById("clearCartBtn").onclick = () => {
+      localStorage.removeItem("my_cart");
+      renderCart();
+      updateCartBadge();
+  };  
+}
+
 
 // Update cart badge on cart page load
 updateCartBadge();

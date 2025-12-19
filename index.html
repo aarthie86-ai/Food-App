@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/index.css">
-         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <title>Pizza Studio</title>
-    </head>
-    <body>
-        <header class="site-header sticky top-0 z-50">
-            <div id="container1">
-                <div id="logo">
-                    <a href="index.html">
-                        <img src="Images/logo.png" alt="Pizza Studio"> 
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pizza Studio</title>
+</head>
+
+<body>
+    <header class="site-header sticky top-0 z-50">
+        <div id="container1">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="Images/logo.png" alt="Pizza Studio">
+                </a>
+            </div>
+            <!-- <nav class="main-nav" aria-label="Main navigation"> -->
+            <div id="navlinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div id="mainlinks">
+                <div id="guestlinks" class="flex items-center gap-2 ml-auto">
+                    <a href="login.html">
+                        <img src="Images/sign-in.png" alt="Sign-in">
                     </a>
                 </div>
-                <!-- <nav class="main-nav" aria-label="Main navigation"> --> 
-                    <div id="navlinks">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="aboutus.html">About Us</a></li>
-                            <li><a href="menu.html">Menu</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div id="mainlinks">
-                        <a href="login.html">
-                            <img src="Images/sign-in.png" alt="Sign-in">
-                        </a>
-                        <a href="cart.html">
-                            <img src="Images/cart.png" alt="Cart">
-                        </a>
-                         <span id="cartBadge"
-                            class="relative -top-4 right-7 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
-                            0 
-                        </span>
-                    </div> 
-                <!-- </nav> -->
-            </div>
-        </header>
-        <main class="site-main">
-            <div id="container2">
-                <div id="sub-container1">
-                    <h2>Fresh Food, Fast Delivery, <br> Every Time!</h2>
-                    <p>Our pizzas and pastas are curated with lots of flavor, 
-                        fresh ingredients and lots of love. 
-                        Every bite fulfills your soul. Don't wait! Lots of 
-                        love coming your way! </p>
-                    <button onclick="location.href='menu.html'">
-                            Order Now
-                    </button>
+                <div id="userlinks" class="hidden flex flex-col items-center gap-2 ml-auto">
+                    <p id="welcomeMsg" class="mr-4 text-sm font-semibold"></p>
+                    <a onclick="logout()" id="logoutLink"
+                        class="inline-block pt-1 border text-center border-black text-sm rounded-lg text-white font-semibold w-20 h-8 bg-black hover:opacity-50">LOGOUT</a>
                 </div>
-                <div id="sub-container2">
-                    <img src="Images/scooter1.png" alt="scooter">
-                </div>
+                <a href="cart.html">
+                    <img src="Images/cart.png" alt="Cart" class="m-0 p-0 width-2 hover:cursor-pointer hover:opacity-70">
+                </a>
+                <span id="cartBadge"
+                    class="relative -top-4 right-7 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
+                    0
+                </span>
             </div>
-            <div id="container3">
-                <img src="Images/img1.png" alt="pizza pasta">
-                <img src="Images/img2.png" alt="spaghetti">
-                <img src="Images/img3.png" alt="pizza">
+            <!-- </nav> -->
+        </div>
+    </header>
+    <main class="site-main">
+        <div id="container2">
+            <div id="sub-container1">
+                <h2>Fresh Food, Fast Delivery, <br> Every Time!</h2>
+                <p>Our pizzas and pastas are curated with lots of flavor,
+                    fresh ingredients and lots of love.
+                    Every bite fulfills your soul. Don't wait! Lots of
+                    love coming your way! </p>
+                <button onclick="location.href='menu.html'">
+                    Order Now
+                </button>
             </div>
-        </main>
+            <div id="sub-container2">
+                <img src="Images/scooter1.png" alt="scooter">
+            </div>
+        </div>
+        <div id="container3">
+            <img src="Images/img1.png" alt="pizza pasta">
+            <img src="Images/img2.png" alt="spaghetti">
+            <img src="Images/img3.png" alt="pizza">
+        </div>
+    </main>
 
-        <footer class="site-footer">
-            <div>
-                <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
-            </div>
-        </footer>
-        <script src="JS/cart.js"></script>
-    </body>
+    <footer class="site-footer">
+        <div>
+            <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="JS/cart.js"></script>
+    <script src="JS/userLoginStatus.js"></script>
+</body>
+
 </html>

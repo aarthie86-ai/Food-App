@@ -48,37 +48,19 @@
             <!-- </nav> -->
         </div>
     </header>
-    <main class="flex items-center justify-center min-h-[80vh] bg-gray-100">
-        <form id="signupForm" class="bg-white rounded-lg p-6 w-full max-w-md shadow">
-            <h2 class="text-xl font-semibold mb-4">Register</h2>
-            <p id="errorMsg" class="text-red-500 text-sm mb-4 hidden"></p>
-
-            <label for="fullName" class="text-sm">Full Name</label>
-            <input type="fullName" id="fullName" required placeholder="Full Name"
-                class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-8 px-2 py-3 mb-3">
-
-            <label for="email" class="text-sm">Email</label>
-            <input type="email" id="email" required placeholder="Email"
-                class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-8 px-2 py-3 mb-3">
-
-            <label for="password" class="text-sm">Password</label>
-            <input type="password" id="password" required placeholder="Password"
-                class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-8 px-2 py-3 mb-4">
-
-            <label for="cnfPassword" class="text-sm">Confirm Password</label>
-            <input type="Password" id="cnfPassword" required placeholder="Confirm Password"
-                class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-8 px-2 py-3 mt-2 mb-4">
-
-            <button class="w-full bg-[#f7b613] hover:bg-[#805c03] py-2 rounded-lg">
-                Sign Up
-            </button>
-        </form>
-        <div id="customAlert" class="hidden flex items-center justify-center fixed z-50 left-0 top-0 w-full h-full">
-            <div class="bg-white p-6 relative rounded shadow-md text-center">
-                <span class="float-right cursor-pointer" onclick="closeAlert()">&times;</span>
-                <p>Sign up successful! You can now login!</p>
+    <main class="flex items-center justify-center">
+        <div class="flex flex-col gap-10 mt-10 items-center justify-center">
+            <div class="bg-white rounded-lg shadow-md self-start p-4 mb-10 w-100 h-auto min-h-50 max-w-3xl">
+                <h2 class="text-md font-semibold mb-4 text-center text-[#f7b613]">Order Confirmation</h2>
+                <p class="text-center text-sm">Thank you for your order! Your order has been successfully placed.
+                </p>
+                <p class="text-center text-sm mt-4">You will receive a confirmation email shortly with the details of
+                    your order.</p>
+                <div class="text-center mt-6">
+                    <a href="index.html"
+                        class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] inline-block">Return to Home</a>
+                </div>
             </div>
-        </div>
         </div>
     </main>
 
@@ -88,8 +70,10 @@
         </div>
     </footer>
     <script src="JS/userLoginStatus.js"></script>
+    <script src="JS/menuItemsInitialize.js"></script>
     <script src="JS/cart.js"></script>
-    <script src="JS/signup.js"></script>
+    <script src="JS/renderCart.js"></script>
+    <script src="JS/checkout.js"></script>
 </body>
 
 </html>

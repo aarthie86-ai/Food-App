@@ -1,76 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/index.css">
-         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <title>Pizza Studio</title>
-    </head>
-    <body class="bg-slate-100">
-        <header class="site-header sticky top-0 z-50">
-            <div id="container1">
-                <div id="logo">
-                    <a href="index.html">
-                        <img src="Images/logo.png" alt="Pizza Studio"> 
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pizza Studio</title>
+</head>
+
+<body class="bg-slate-100">
+    <header class="site-header sticky top-0 z-50">
+        <div id="container1">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="Images/logo.png" alt="Pizza Studio">
+                </a>
+            </div>
+            <!-- <nav class="main-nav" aria-label="Main navigation"> -->
+            <div id="navlinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div id="mainlinks">
+                <div id="guestlinks" class="flex items-center gap-2 ml-auto">
+                    <a href="login.html">
+                        <img src="Images/sign-in.png" alt="Sign-in">
                     </a>
                 </div>
-                <!-- <nav class="main-nav" aria-label="Main navigation"> --> 
-                    <div id="navlinks">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="aboutus.html">About Us</a></li>
-                            <li><a href="menu.html">Menu</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div id="mainlinks">
-                        <a href="login.html">
-                            <img src="Images/sign-in.png" alt="Sign-in">
-                        </a>
-                        <a href="cart.html">
-                            <img src="Images/cart.png" alt="Cart">
-                        </a>
-                         <span id="cartBadge"
-                            class="relative -top-4 right-7 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
-                            0 
-                        </span>
-                    </div> 
-                <!-- </nav> -->
-             </div>
-        </header>
-        <main class="site-main">
-            <div class="flex flex-row flex-wrap gap-10 mt-10 items-center justify-center">
-                <div class="bg-white rounded-lg shadow-md self-start p-4 mb-10 w-100 h-auto min-h-50 max-w-6xl">
-                    <h2 class="text-md font-semibold mb-4 text-center text-[#f7b613]">Cart Summary</h2>
-                    <div id="cartItems" class="mb-4">
-                        <p class="text-center text-sm"> Your cart is empty!</p>
-                        <!-- Cart items will be dynamically added here -->
-                    </div>
-                    <button id="clearCartBtn" onclick="clearCart()" class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
-                        Clear Cart
-                    </button>
+                <div id="userlinks" class="hidden flex flex-col items-center gap-2 ml-auto">
+                    <p id="welcomeMsg" class="mr-4 text-sm font-semibold"></p>
+                    <a onclick="logout()" id="logoutLink"
+                        class="inline-block pt-1 border text-center border-black text-sm rounded-lg text-white font-semibold w-20 h-8 bg-black hover:opacity-50">LOGOUT</a>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-4 mb-10 w-100 h-auto self-start max-w-6xl">
-                        <p class="text-md font-semibold mb-4 text-[#f7b613]">Order Summary</p>
-                        <p class="text-sm mb-4">Subtotal: <span id="subtotal"class="ml-56"> $0.00</span></p>
-                        <p  class="text-sm mb-4">Delivery Fee: <span id="deliveryFee"class="ml-50"> $0.00</span></p>
-                         <p class="text-sm mb-4">Taxes: <span id="taxes" class="ml-61"> $0.00</span></p>
-                        <hr class="border-t-2 border-[#f7b613] my-2 w-full">
-                        <p class="text-sm mb-5 font-semibold text-[#f7b613]">Total: <span id="cartTotal" class="ml-62"> $0.00</span></p>
-                        <button onclick="checkout()"
-                            class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
-                            Proceed to Checkout
-                        </button>
-                </div>
-        </main>
-         <footer class="site-footer">
-            <div>
-                <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
+                <a href="cart.html">
+                    <img src="Images/cart.png" alt="Cart" class="m-0 p-0 width-2 hover:cursor-pointer hover:opacity-70">
+                </a>
+                <span id="cartBadge"
+                    class="relative -top-4 right-7 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
+                    0
+                </span>
             </div>
-        </footer>
-        <script src="JS/menuItemsInitialize.js"></script>
-        <script src="JS/cart.js"></script>
-        <script src="JS/renderCart.js"></script>
-    </body>
+            <!-- </nav> -->
+        </div>
+    </header>
+    <main class="site-main">
+        <div class="flex flex-row flex-wrap gap-10 mt-10 items-center justify-center">
+            <div class="bg-white rounded-lg shadow-md self-start p-4 mb-10 w-100 h-auto min-h-50 max-w-6xl">
+                <h2 class="text-md font-semibold mb-4 text-center text-[#f7b613]">Cart Summary</h2>
+                <div id="cartItems" class="mb-4">
+                    <p class="text-center text-sm"> Your cart is empty!</p>
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                <button id="clearCartBtn" onclick="clearCart()"
+                    class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
+                    Clear Cart
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4 mb-10 w-100 h-auto self-start max-w-6xl">
+                <p class="text-md font-semibold mb-4 text-[#f7b613]">Order Summary</p>
+                <p class="text-sm mb-4">Subtotal: <span id="subtotal" class="ml-56"> $0.00</span></p>
+                <p class="text-sm mb-4">Delivery Fee: <span id="deliveryFee" class="ml-50"> $0.00</span></p>
+                <p class="text-sm mb-4">Taxes: <span id="taxes" class="ml-61"> $0.00</span></p>
+                <hr class="border-t-2 border-[#f7b613] my-2 w-full">
+                <p class="text-sm mb-5 font-semibold text-[#f7b613]">Total: <span id="cartTotal" class="ml-62">
+                        $0.00</span></p>
+                <button onclick="window.location.href='checkout.html'"
+                    class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
+                    Proceed to Checkout
+                </button>
+            </div>
+    </main>
+    <footer class="site-footer">
+        <div>
+            <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="JS/userLoginStatus.js"></script>
+    <script src="JS/menuItemsInitialize.js"></script>
+    <script src="JS/cart.js"></script>
+    <script src="JS/renderCart.js"></script>
+</body>
+
 </html>
