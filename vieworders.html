@@ -45,24 +45,26 @@
                     0
                 </span>
             </div>
-            <!-- </nav> -->
+        </div>
+        <!-- </nav> -->
         </div>
     </header>
-    <main class="flex items-center justify-center">
-        <div class="flex flex-col gap-10 mt-10 items-center justify-center">
-            <div class="bg-white rounded-lg shadow-md self-start p-4 mb-10 w-100 h-auto min-h-50 max-w-3xl">
-                <h2 class="text-md font-semibold mb-4 text-center text-[#f7b613]">Order Confirmation</h2>
-                <p class="text-center text-sm">Thank you for your order! Your order has been successfully placed.</p>
-                <p class="text-center text-sm mt-2">Order Number: <span
-                        class="font-bold" id="orderNumber"></span></p>
-                <p class="text-center text-sm mt-4">You will receive a confirmation email shortly with the details of
-                    your order.</p>
-                <div class="text-center mt-6">
-                    <a href="index.html"
-                        class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] inline-block">Return to Home</a>
-                </div>
-            </div>
+   
+    <main class="min-h-[80vh] bg-white-100">
+        
+        <div class="flex flex-col gap-2">
+             <a onclick="location.href='admin.html'" class="inline-block self-start mt-10 ml-12 text-md text-blue-500 hover:underline cursor-pointer">
+                &larr; Go to Admin Dashboard
+            </a>
+            <section class=" bg-white max-w-6xl mx-auto">
+                <h2 class="text-2xl mb-2 font-semibold text-center ">Orders Recieved</h2>  
+                    <p id="orderMessage" class="text-center font-semibold"></p>
+                    <div id="orderGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 m-4">
+                        <!-- Orders will be dynamically added here -->
+                    </div>
+            </section>
         </div>
+        
     </main>
 
     <footer class="site-footer">
@@ -70,18 +72,9 @@
             <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
         </div>
     </footer>
-    <script src="JS/userLoginStatus.js"></script>
-    <script src="JS/menuItemsInitialize.js"></script>
     <script src="JS/cart.js"></script>
-    <script>
-        // Display order number
-        document.addEventListener("DOMContentLoaded", function () {
-            const orderDetails = JSON.parse(localStorage.getItem("Orders"));
-            if (orderDetails && orderDetails.orderId) {
-                document.getElementById("orderNumber").textContent = orderDetails.orderId;
-            }
-        });
-    </script>
+    <script src="JS/userLoginStatus.js"></script>
+    <script src="JS/viewOrders.js"></script>
 </body>
 
 </html>

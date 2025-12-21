@@ -11,18 +11,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const userlinks = document.getElementById("userlinks");
     const guestlinks = document.getElementById("guestlinks");
 
-    if (currentUser) { // User is logged in
+    if(currentUser && currentUser.name === "Admin") { // Admin is logged in
         userlinks.classList.remove("hidden");
-        userlinks.querySelector("#welcomeMsg").textContent = `Welcome, ${currentUser.name.split(" ")[0]}`;
+        userlinks.querySelector("#welcomeMsg").textContent = `Hello, Admin`;
         guestlinks.classList.add("hidden");
-    } else { // User is not logged in
-        userlinks.classList.add("hidden");
-        guestlinks.classList.remove("hidden");
+    }
+    else {
+       
+        if (currentUser) { // User is logged in
+            userlinks.classList.remove("hidden");
+            userlinks.querySelector("#welcomeMsg").textContent = `Welcome, ${currentUser.name.split(" ")[0]}`;
+            guestlinks.classList.add("hidden");
+        } else { // User is not logged in
+            userlinks.classList.add("hidden");
+            guestlinks.classList.remove("hidden");
+        }
     }
 });
 
 // Function to logout user
 function logout() {
+    console.log("Logging out user...");
     // Remove current user data from localStorage
     localStorage.removeItem("currentUser");
     

@@ -1,3 +1,16 @@
+// get cart subtotal from localStorage and display on checkout page
+document.addEventListener("DOMContentLoaded", function() {
+
+    // retrieve subtotal, taxes, and total amount from localStorage
+    const subtotal = localStorage.getItem("subtotal") || "0.00";
+    const taxes = localStorage.getItem("taxes") || "0.00";
+    const total_amount = localStorage.getItem("total_amount") || "0.00";
+    
+    document.getElementById("subtotal").textContent = `$${parseFloat(subtotal).toFixed(2)}`;
+    document.getElementById("taxes").textContent = `$${parseFloat(taxes).toFixed(2)}`;
+    document.getElementById("cartTotal").textContent = `$${parseFloat(total_amount).toFixed(2)}`;
+});
+
 // Validate checkout form before submission and place order
 document.getElementById("checkoutForm").onsubmit = function (event) {
     event.preventDefault(); // Prevent form submission
@@ -128,6 +141,17 @@ function validateCVV(cvv, errorMsg) {
 
 // Function to place order
 function placeOrder() {
+    // Store order details in localStorage
+    const orderDetails = {
+        orderId: 'ORD' + Date.now(),
+        date: new Date().toLocaleString(),
+        items: JSON.parse(localStorage.getItem("my_cart")) || [],
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("Orders")) || [];
+    existingOrders.push(orderDetails);
+    localStorage.setItem("Orders", JSON.stringify(existingOrders));
+
     // Clear the cart
     localStorage.removeItem("my_cart");
 

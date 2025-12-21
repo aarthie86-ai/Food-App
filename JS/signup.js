@@ -48,6 +48,7 @@ function displaySuccessAlert(alertBox) {
 // Function to close the alert
 function closeAlert() {
     customAlertBox.classList.add("hidden");
+    customAlertBox.querySelector("#boxMessage").textContent = "Sign up successful! You can now login!";
     // Redirect to login page
     window.location.href = "login.html";
 }

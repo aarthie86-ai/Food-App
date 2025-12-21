@@ -50,7 +50,7 @@
     </header>
     <main class="site-main">
         <div class="flex flex-row flex-wrap gap-10 mt-10 items-center justify-center">
-            <div class="bg-white rounded-lg shadow-md self-start p-4 mb-10 w-100 h-auto min-h-50 max-w-6xl">
+            <div class="bg-white rounded-lg shadow-md self-start p-4 mb-10 w-120 h-auto min-h-50 max-w-6xl">
                 <h2 class="text-md font-semibold mb-4 text-center text-[#f7b613]">Cart Summary</h2>
                 <div id="cartItems" class="mb-4">
                     <p class="text-center text-sm"> Your cart is empty!</p>
@@ -62,17 +62,28 @@
                 </button>
             </div>
             <div class="bg-white rounded-lg shadow-md p-4 mb-10 w-100 h-auto self-start max-w-6xl">
-                <p class="text-md font-semibold mb-4 text-[#f7b613]">Order Summary</p>
+                <p class="text-md text-center font-semibold mb-4 text-[#f7b613]">Order Summary</p>
                 <p class="text-sm mb-4">Subtotal: <span id="subtotal" class="ml-56"> $0.00</span></p>
                 <p class="text-sm mb-4">Delivery Fee: <span id="deliveryFee" class="ml-50"> $0.00</span></p>
                 <p class="text-sm mb-4">Taxes: <span id="taxes" class="ml-61"> $0.00</span></p>
                 <hr class="border-t-2 border-[#f7b613] my-2 w-full">
                 <p class="text-sm mb-5 font-semibold text-[#f7b613]">Total: <span id="cartTotal" class="ml-62">
                         $0.00</span></p>
-                <button onclick="window.location.href='checkout.html'"
-                    class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
+                <button onclick="checkout()" class="bg-[#f7b613] px-4 py-2 rounded hover:bg-[#805c03] w-full">
                     Proceed to Checkout
                 </button>
+            </div>
+            <div id="customAlertBox" class="hidden fixed inset-0 bg-black-200/40 flex items-center justify-center">
+                <div class="bg-white text-center rounded shadow-lg w-100 h-40">
+                    <div class="m-0 p-0 h-10 w-full bg-[#f7b613] rounded-t-lg">
+                        <p id="alertTitle" class="text-center pt-2 font-semibold"></p>
+                    </div>
+                    <p id="alertMessage" class="inline -pt-4 text-sm"></p>
+                    <div class="mt-5">
+                        <button class="font-semibold mr-2 bg-[#f7b613] w-14 h-7 rounded mb-2"
+                            onclick="closeAlertBox()">OK</button>
+                    </div>
+                </div>
             </div>
     </main>
     <footer class="site-footer">

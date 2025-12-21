@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Pizza Studio</title>
+</head>
+
+<body>
+    <header class="site-header sticky top-0 z-50">
+        <div id="container1">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="Images/logo.png" alt="Pizza Studio">
+                </a>
+            </div>
+            <!-- <nav class="main-nav" aria-label="Main navigation"> -->
+            <div id="navlinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div id="mainlinks">
+                <div id="guestlinks" class="flex items-center gap-2 ml-auto">
+                    <a href="login.html">
+                        <img src="Images/sign-in.png" alt="Sign-in">
+                    </a>
+                </div>
+                <div id="userlinks" class="hidden flex flex-col items-center gap-2 ml-auto">
+                    <p id="welcomeMsg" class="mr-4 text-sm font-semibold"></p>
+                    <a onclick="logout()" id="logoutLink"
+                        class="inline-block pt-1 border text-center border-black text-sm rounded-lg text-white font-semibold w-20 h-8 bg-black hover:opacity-50">LOGOUT</a>
+                </div>
+                <a href="cart.html">
+                    <img src="Images/cart.png" alt="Cart" class="m-0 p-0 width-2 hover:cursor-pointer hover:opacity-70">
+                </a>
+                <span id="cartBadge"
+                    class="relative -top-4 right-7 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full">
+                    0
+                </span>
+            </div>
+        </div>
+        <!-- </nav> -->
+        </div>
+    </header>
+    <main class="flex items-center justify-center min-h-[80vh] bg-white-100">
+        <div>
+            <h2 class="text-lg text-center font-semibold mb-4 ">Add Menu Item</h2>
+            <p class="text-center text-sm mb-4"> Use the form below to add new items to the menu.</p>
+            <form id="addMenuItemForm" class="bg-white rounded-lg p-6 w-full max-w-md shadow">
+                <p id="errorMsg" class="text-red-500 text-sm mb-4 hidden"></p>
+                <label for="itemName" class="text-sm">Item Name</label>
+                <input type="text" id="itemName" maxlength="50" required placeholder="Item Name"
+                    class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-8 px-2 py-3 mb-3">
+
+                <label for="itemDescription" class="text-sm">Description</label>
+                <textarea id="itemDescription" required maxlength="70" placeholder="Item Description"
+                    class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-20 px-2 py-3 mb-3"></textarea>
+
+                <label for="itemPrice" class="text-sm">Price</label>
+                <input type="text" id="itemPrice" required placeholder="Item Price"
+                    class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-8 px-2 py-3 mb-3">
+                <label for="itemImage" class="text-sm">Image URL</label>
+                <input type="file" id="itemImage" required placeholder="Image URL"
+                    class="rounded-sm text-xs border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-8 px-2 py-3 mb-4">
+                <label for="itemCategory" class="text-sm">Category</label>
+                <select id="itemCategory" required
+                    class="rounded-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black w-full h-12 px-2 py-3 mb-4">
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Salad">Salad</option>
+                    <option value="Dessert">Dessert</option>
+                </select>
+                <button type="submit" class="w-full bg-[#f7b613] hover:bg-[#805c03] py-2 rounded-lg">
+                    Add Item
+                </button>
+            </form>
+            <a onclick="location.href='admin.html'" class="inline-block mt-4 text-sm text-blue-500 hover:underline cursor-pointer">
+                &larr; Go to Admin Dashboard
+            </a>
+        </div>
+        <div id="messageBox" class="hidden fixed inset-0 bg-black-200/40 flex items-center justify-center">
+            <div class="bg-white text-center rounded shadow-lg w-100 h-50">
+
+            <div class="m-0 p-0 h-10 w-full bg-[#f7b613] rounded-t-lg"><p class="text-center pt-2 font-semibold">Item Added</p></div>
+                <p id="boxMessage" class="inline -pt-4 text-sm"></p>
+                <div class="mt-5">
+                    <button class="font-semibold mr-2 bg-[#f7b613] w-30 h-7 rounded mb-2"
+                        onclick=location.href="addmenuitem.html">Add another</button>
+                    <button class="font-semibold mr-2 bg-[#f7b613] w-14 h-7 rounded mb-2"
+                        onclick="closeMessageBox()">Done</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="JS/cart.js"></script>
+    <script src="JS/userLoginStatus.js"></script>
+    <script src="JS/addmenuitem.js"></script>
+</body>
+
+</html>

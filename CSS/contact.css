@@ -23,18 +23,20 @@ body{
    align-items: center;
    justify-content: center;
    border-radius: 10px;
-   background-color: #FAEBD7;
+   background-color: white;
    padding: 0px 30px 30px 30px;
 }
 
 h4 {
-    font-size: 30px;
-    color: #f7b613;
-    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f7b613; 
+    margin: 30px 0px;
 }
 
 #content p,pre {
     font-family: cursive;
     color: black;
     border-bottom: #282932;
+    margin-bottom: 15px;
 }

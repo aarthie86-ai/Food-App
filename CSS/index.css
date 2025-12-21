@@ -166,3 +166,7 @@ body{
     padding: 5px 25px;
     margin-top: auto;
 }
+
+.site-footer div p{
+    padding-top: 12px;
+} 

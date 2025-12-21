@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/index.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!--<link rel="stylesheet" href="CSS/menu.css">-->
     <title>Pizza Studio</title>
 </head>
 
@@ -46,12 +45,18 @@
                     0
                 </span>
             </div>
-            <!-- </nav> -->
+        </div>
+        <!-- </nav> -->
         </div>
     </header>
-    <main>
+   
+    <main class="flex items-center justify-center min-h-[80vh] bg-white-100">
+        
         <div class="flex flex-col gap-10">
-            <section class=" bg-white mt-4 p-8 max-w-6xl mx-auto">
+             <a onclick="location.href='admin.html'" class="inline-block self-start mt-10 ml-12 text-md text-blue-500 hover:underline cursor-pointer">
+                &larr; Go to Admin Dashboard
+            </a>
+            <section class=" bg-white max-w-6xl mx-auto">
                 <h2 class="text-2xl mb-2 font-semibold">PIZZA</h2>
                 <div class="flex items-center justify-between mb-5">
                     <div id="pizza-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -78,16 +83,17 @@
                     </div>
                 </div>
             </section>
-            <div id="boxContainer" class="hidden fixed inset-0 bg-black-200/40 flex items-center justify-center">
-                <div class="bg-white text-center rounded shadow-lg w-100 h-56">
-                    <div class="m-0 p-0 h-10 w-full bg-[#f7b613] rounded-t-lg"><p class="text-center pt-2 font-semibold">Item Added to Cart</p></div>
-                    <img id="boxImage" class="block mx-auto mt-4 mb-4 w-20 h-16">
+            <div id="messageBox" class="hidden fixed inset-0 bg-black-200/40 flex items-center justify-center">
+                <div class="bg-white text-center rounded shadow-lg w-100 h-50">
+
+                <div class="m-0 p-0 h-10 w-full bg-[#f7b613] rounded-t-lg"><p class="text-center pt-2 font-semibold">Item Deleted</p></div>
+                    <img id="boxImage" class="block mx-auto mb-4 w-20 h-16">
                     <p id="boxMessage" class="inline -pt-4 text-sm"></p>
                     <div class="mt-5">
-                        <button class="font-semibold mr-2 bg-[#f7b613] w-20 h-7 rounded mb-2"
-                            onclick=location.href="cart.html">Go to Cart</button>
+                        <button class="font-semibold mr-2 bg-[#f7b613] w-30 h-7 rounded mb-2"
+                            onclick=location.href="deletemenuitem.html">Delete another</button>
                         <button class="font-semibold mr-2 bg-[#f7b613] w-14 h-7 rounded mb-2"
-                            onclick="closeBox()">Close</button>
+                            onclick="closeMessageBox()">Done</button>
                     </div>
                 </div>
             </div>
@@ -99,12 +105,9 @@
             <p>&copy; 2025 Pizza Studio. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- SCRIPTS -->
-    <script src="JS/userLoginStatus.js"></script>
-    <script src="JS/menuItemsInitialize.js"></script>
-    <script src="JS/menuitem.js"></script>
     <script src="JS/cart.js"></script>
+    <script src="JS/userLoginStatus.js"></script>
+    <script src="JS/deletemenuitem.js"></script>
 </body>
 
 </html>

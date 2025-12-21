@@ -49,7 +49,7 @@ function loginUser() {
     const guestlinks = document.getElementById("guestlinks");
 
     customAlertBox.classList.remove("hidden");
-    customAlertBox.querySelector("p").textContent =
+    customAlertBox.querySelector("#boxMessage").textContent =
         `Welcome ${name}! \n     Login successful! You can now place your orders.`;
 
     // Update navigation links
@@ -64,16 +64,19 @@ function loginAdmin() {
     const guestlinks = document.getElementById("guestlinks");
 
     customAlertBox.classList.remove("hidden");
-    customAlertBox.querySelector("p").textContent =
-        `Welcome Admin! \n     Login successful! You can now place your orders.`;
+    customAlertBox.querySelector("#boxMessage").textContent =
+        `Welcome Admin! \n     Login successful!`;
 
     // Update navigation links
     userlinks.classList.remove("hidden");
     userlinks.querySelector("#welcomeMsg").textContent = `Hello, Admin`;
     guestlinks.classList.add("hidden");
+    const currentUser = {
+        name: "Admin",
+        email: "admin@example.com",
+    };
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
 }
-    
-
 
 // Function to validate user credentials
 function validateUser(email, password) {
@@ -115,8 +118,11 @@ buttonGroup.addEventListener('click', (event) => {
         event.target.classList.remove('bg-[#f7b613]');
 
         // Optional: Get the value of the clicked button
-        console.log('Selected option:', event.target.getAttribute('data-value'));
         USER_TYPE = parseInt(event.target.getAttribute('data-value'));
+        if (USER_TYPE === 2) {
+            document.getElementById("signUp").classList.add("hidden");
+        }
+
     }
 });
 

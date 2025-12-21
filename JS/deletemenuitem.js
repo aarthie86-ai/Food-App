@@ -7,8 +7,8 @@ function displayMenuItems(item) {
                 <h3 class="text-md font-semibold m-2">${item.name}</h3>
                 <p class="text-[#60605F] text-xs m-2">${item.description}</p>
                 <b class="text-md font-semibold m-2">$${item.price.toFixed(2)}</b>
-                <button data-add-id="${item.id}"id="addButton${item.id}" class="font-semibold float-right mr-2 bg-[#f7b613] w-10 h-7 rounded mb-2" onclick="showBox('${item.name}', '${item.image}')">
-                        Add
+                <button data-add-id="${item.id}" id="deleteButton${item.id}" class="font-semibold float-right mr-2 bg-[#f7b613] w-14 h-7 rounded mb-2" onclick="showBox('${item.id}','${item.name}', '${item.image}')">
+                        Delete
                 </button>
             </div>
         `;
@@ -31,25 +31,28 @@ function getMenuItems() {
 getMenuItems();
 
 // Get references to the add button and the overlay message box
-const addButton = document.getElementById('addButton');
-const boxContainer = document.getElementById('boxContainer');
+const boxContainer = document.getElementById('messageBox');
 
 // Function to show the box
-function showBox(itemName, itemImg) {
+function showBox(itemId, itemName, itemImg) {
+    deleteMenuItem(itemId);
     boxContainer.classList.remove('hidden');
     const imgElement = document.getElementById('boxImage');
     imgElement.src = itemImg;
     const boxMessage = document.getElementById('boxMessage');
-    boxMessage.innerHTML = `${itemName} has been added to your cart!`;
+    boxMessage.innerHTML = `${itemName} has been deleted from the menu!`;
+}
+
+// Function to delete menu item
+function deleteMenuItem(itemId) {
+    console.log("Deleting item with ID:", itemId);
+    let menu_items = JSON.parse(localStorage.getItem("menu_items")) || [];
+    menu_items = menu_items.filter(item => item.id != itemId);
+    localStorage.setItem("menu_items", JSON.stringify(menu_items));
 }
 
 // Function to hide the box (used by the close button)
-function closeBox() {
+function closeMessageBox() {
   boxContainer.classList.add('hidden');
+  window.location.href = "admin.html";
 }
-
-//Event listener for add to cart button
-document.addEventListener('click', function(event) {
-    const btn = event.target.closest("[data-add-id]");
-    if (btn)  addToCart(btn.dataset.addId);
-});

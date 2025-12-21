@@ -48,7 +48,7 @@
             <!-- </nav> -->
         </div>
     </header>
-    <main class="flex items-center justify-center min-h-[80vh] bg-gray-100">
+    <main class="flex items-center justify-center min-h-[100vh] bg-gray-100">
         <form id="signupForm" class="bg-white rounded-lg p-6 w-full max-w-md shadow">
             <h2 class="text-xl font-semibold mb-4">Register</h2>
             <p id="errorMsg" class="text-red-500 text-sm mb-4 hidden"></p>
@@ -73,10 +73,16 @@
                 Sign Up
             </button>
         </form>
-        <div id="customAlert" class="hidden flex items-center justify-center fixed z-50 left-0 top-0 w-full h-full">
-            <div class="bg-white p-6 relative rounded shadow-md text-center">
-                <span class="float-right cursor-pointer" onclick="closeAlert()">&times;</span>
-                <p>Sign up successful! You can now login!</p>
+        <div id="customAlert" class="hidden fixed inset-0 bg-black-200/40 flex items-center justify-center">
+            <div class="bg-white text-center rounded shadow-lg w-100 h-40">
+
+            <div class="m-0 p-0 h-10 w-full bg-[#f7b613] rounded-t-lg">
+                <p class="text-center pt-2 font-semibold">Sign Up Successful!</p></div>
+                <p id="boxMessage" class="inline -pt-4 text-sm"></p>
+                <div class="mt-5">
+                    <button class="font-semibold mr-2 bg-[#f7b613] w-14 h-7 rounded mb-2"
+                        onclick="closeAlert()">OK</button>
+                </div>
             </div>
         </div>
         </div>

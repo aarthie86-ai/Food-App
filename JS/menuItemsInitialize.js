@@ -214,3 +214,8 @@
         category: "Dessert"
     }
 ];
+
+// Saving menu items to localStorage
+if (!localStorage.getItem("menu_items")) {
+    localStorage.setItem("menu_items", JSON.stringify(MENU_ITEMS));
+}
