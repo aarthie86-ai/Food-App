@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Food Order App — Project Documentation</title>
+  <style>
+    body{font-family: Arial, Helvetica, sans-serif; line-height:1.5; margin:24px}
+    h1,h2,h3{color:#222}
+    img{max-width:100%;height:auto}
+    .section{margin-bottom:20px}
+    .code{background:#f6f6f6;border:1px solid #e6e6e6;padding:8px}
+  </style>
+</head>
+<body>
+<h1>Food Order App — Project Documentation</h1>
+
+<div class="section">
+  <h2>1. Heading of project</h2>
+  <p><strong>Food Order App</strong></p>
+</div>
+
+<div class="section">
+  <h3>1.1 Project description</h3>
+  <p>The Food Order App is a course-end project that demonstrates a simple food ordering user interface where a customer can browse menu items, add to cart, and check out. The delivered workspace contains static front-end pages (HTML, CSS, JS) and images demonstrating UI and flows. For learning exercises, the project can be extended with a backend implemented in Java (or other languages) for persistence and business logic.</p>
+  <h4>1.1.2 Tech stack</h4>
+  <ul>
+    <li>HTML / CSS / JavaScript (front-end — implemented in this repo)</li>
+    <li>Java (optional / recommended for backend implementation)</li>
+    <li>File Handling (for a Java assignment storing orders/users in files)</li>
+    <li>Data structures (for in-memory representations, queues/lists/maps)</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>2. Architecture diagram / flow chart</h2>
+  <p>High-level flow:</p>
+  <ol>
+    <li>User opens <code>index.html</code> (home page).</li>
+    <li>User navigates to <code>menu.html</code> to browse menu items.</li>
+    <li>User adds items to <code>cart.html</code> and proceeds to <code>checkout.html</code>.</li>
+    <li>After checkout, user sees <code>orderconfirmation.html</code>.</li>
+  </ol>
+  <p>Screenshots / diagrams (from the <code>Images/</code> folder):</p>
+  <img src="../Images/logo.png" alt="logo" style="max-width:180px">
+  <p style="margin-top:8px"><img src="../Images/img1.png" alt="screenshot 1" style="max-width:400px"></p>
+  <p style="margin-top:8px"><img src="../Images/img2.png" alt="screenshot 2" style="max-width:400px"></p>
+</div>
+
+<div class="section">
+  <h2>3. Project User Stories (Agile / Scrum)</h2>
+  <p>Example user stories (As a &lt;role&gt; I want &lt;feature&gt; so that &lt;goal&gt;):</p>
+  <ul>
+    <li>As a user I want a menu page so that I can browse available food items.</li>
+    <li>As a user I want a registration/signup page so that I can create an account.</li>
+    <li>As a user I want a login page to authenticate so that I can access my orders.</li>
+    <li>As a user I want a cart so that I can add and review selected items before checkout.</li>
+    <li>As an admin I want to add/edit/delete menu items so that I can manage offerings.</li>
+    <li>As a developer I want to create console or UI interactions to test flows.</li>
+  </ul>
+  <h4>Sprint plan (example)</h4>
+  <p>Sprint 1: menu UI and product cards. Sprint 2: cart and checkout. Sprint 3: admin pages and order listing.</p>
+</div>
+
+<div class="section">
+  <h2>4. Project Git Repository</h2>
+  <p>Make sure your GitHub repository is under your GitHub username.</p>
+  <div class="code">git clone https://github.com/your-username/your-repo.git</div>
+</div>
+
+<div class="section">
+  <h2>5. How to run project (local)</h2>
+  <ol>
+    <li>Clone project: <code>git clone &lt;your-repo-url&gt; && cd "Food order App"</code></li>
+    <li>Open the site: double-click <code>index.html</code> OR run a static server: <code>python3 -m http.server 8000</code> and visit <code>http://localhost:8000</code>.</li>
+  </ol>
+  <p>Useful pages: <code>index.html</code>, <code>menu.html</code>, <code>cart.html</code>, <code>checkout.html</code>, <code>login.html</code>, <code>signup.html</code>, admin pages.</p>
+  <h4>Admin credentials (sample)</h4>
+  <p>Username: <strong>admin</strong><br>Password: <strong>admin123</strong></p>
+  <p>Assumption: single admin and single regular user for the demo.</p>
+</div>
+
+<div class="section">
+  <h2>6. Directory structure</h2>
+  <ul>
+    <li>index.html</li>
+    <li>aboutus.html</li>
+    <li>menu.html</li>
+    <li>cart.html</li>
+    <li>checkout.html</li>
+    <li>login.html</li>
+    <li>signup.html</li>
+    <li>admin.html</li>
+    <li>addmenuitem.html</li>
+    <li>deletemenuitem.html</li>
+    <li>vieworders.html</li>
+    <li>CSS/</li>
+    <li>JS/</li>
+    <li>Images/</li>
+    <li>README.md</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>7. Source code files (highlight)</h2>
+  <ul>
+    <li>index.html — landing page</li>
+    <li>menu.html — menu listing</li>
+    <li>cart.html & checkout.html — cart and checkout</li>
+    <li>login.html & signup.html — auth UI</li>
+    <li>admin pages, CSS/ and JS/ folders</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>8. Output screenshots</h2>
+  <p>Place screenshots in Images/ or docs/screenshots/: index.png, menu.png, cart.png, admin.png</p>
+</div>
+
+<div class="section">
+  <h2>9. Notes & Assumptions</h2>
+  <ul>
+    <li>Static front-end demo: no server persistence included.</li>
+    <li>Admin credentials above are sample defaults used for demo only.</li>
+    <li>Assumption: only one admin and one user account exist for assignment testing.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>10. Future work</h2>
+  <ul>
+    <li>Implement backend (Java Spring Boot, Node/Express) and database.</li>
+    <li>Add secure authentication and role-based access control.</li>
+    <li>Add unit/integration tests and CI pipeline.</li>
+  </ul>
+</div>
+
+<footer style="margin-top:30px;border-top:1px solid #ddd;padding-top:10px;color:#666">Document created from project files in the workspace. Replace placeholder repo URL and add screenshots as needed.</footer>
+</body>
+</html>

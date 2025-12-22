@@ -38,7 +38,7 @@ body{
 #navlinks {
     align-items: center;
     justify-content: center;
-    flex: 1 0 auto;
+    flex: 0 0  auto;
     min-width: 0;
 }
 
@@ -62,7 +62,7 @@ body{
 
 #mainlinks{
     display: flex;
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     align-items: center;
     gap: 8px;
     margin-left: auto; /* push mainlinks to the far right */
