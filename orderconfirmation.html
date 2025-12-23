@@ -77,11 +77,12 @@
         // Display order number
         document.addEventListener("DOMContentLoaded", function () {
             const orderDetails = JSON.parse(localStorage.getItem("Orders"));
-            if (orderDetails && orderDetails.orderId) {
-                document.getElementById("orderNumber").textContent = orderDetails.orderId;
-            }
+            index = orderDetails.length - 1;
+            document.getElementById("orderNumber").textContent = orderDetails[index].orderId;
+            
         });
     </script>
+   
 </body>
 
 </html>
